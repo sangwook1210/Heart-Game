@@ -61,7 +61,8 @@ ArrayList<Trump> deck = new ArrayList<Trump>();를 생성하고, 이에 위와 �
 입력된 플레이어의 수만큼 각각의 name을 입력받는다.
   ![image](https://user-images.githubusercontent.com/112921582/221406777-da0dfd82-0f3e-45bd-af05-762a23ca29af.png)
 게임을 플레이하는 플레이어의 순서를 무작위로 정한다. 만약 이전의 플레이어와 같은 순서가 나온다면 i--;를 사용하여 for문을 한번 더 실행하여 다시 순서를 정한다. 모든 순서가 정해진 후에는 정해진 순서를 출력한다.
-  
+  ![image](https://user-images.githubusercontent.com/112921582/221406862-2b8967db-9e49-4002-9269-4a5fb43ab729.png)
+
 게임을 시작하기 전, 게임 진행에 필요한 변수들을 선언한다.
 hand_num 변수는 플레이어로부터 낼 카드를 입력받을 변수이다.
 round 변수는 지금이 몇 라운드인지를 저장할 변수이다.
@@ -71,6 +72,7 @@ cnt1과 cnt2 변수는 플레이어의 차례가 왔는지 체크할 변수들�
 top 변수는 opencard 중 가장 큰 카드의 인덱스를 저장할 변수이다. 
 can_Heart 변수는 처음으로 카드를 내는 사람이 하트를 낼 수 있는지 검사하는 변수이다.
 Opened_card opencard=new Opened_card();로 Opened_card ArrayList 를 생성한다.
+![image](https://user-images.githubusercontent.com/112921582/221406871-97edb14a-ff00-460f-9580-b458cdcb71e5.png)
 
 
 round: while(true)로 round 무한루프가 시작된다.
@@ -80,15 +82,18 @@ round: while(true)로 round 무한루프가 시작된다.
 hand_volume은 52/p_num의 정수값이다.
 다 뽑고 나면, 남은 deck에 클로버 2가 있는지 검사한다.
 만약 있다면 뽑은 모든 카드를 deck에 돌려넣고 continue outer;를 사용하여 다시 카드를 뽑는다. 이와 같은 과정을 계속 반복하여 남아있는 deck에 클로버 2가 없다면 break outer;를 사용하여 카드뽑기를 완료한 후 모든 플레이어의 hand를 출력한다.
+![image](https://user-images.githubusercontent.com/112921582/221406879-935a96e9-31a2-4b13-919b-42868c6c8820.png)
 
 
 turn을 0으로 초기화한 후, 어느 플레이어가 클로버 2를 가지고 있는지 검사한다.
 그 플레이어의 first 변수를 true로 만들어준다.
+![image](https://user-images.githubusercontent.com/112921582/221406881-feda5ffa-f60c-4eb7-9112-0f9a9cf55694.png)
 
 
 trick: while(true)로 trick 무한루프가 시작된다.
 trick을 1 증가시켜준 후, cnt1을 0, cnt2를 –1로 초기화시킨다.
 first가 true인 플레이어를 찾아내 turn 변수를 그 플레이어의 order로 변경시킨 후, 몇 번째 라운드의 몇 번째 트릭인지를 출력한다.
+![image](https://user-images.githubusercontent.com/112921582/221406882-3670471e-fcef-44a5-8c34-d4166d1cfed3.png)
 
 
 turn: while(true)로 turn 무한루프가 시작된다.
@@ -99,6 +104,7 @@ turn 변수를 trick에서 처음 플레이하는 플레이어의 order로 변�
 만약 잘못된 입력이 들어온다면 error를 1 증가시킨다.
 만약 error가 0보다 크다면 플레이어의 턴을 다시 반복한다.
 플레이어의 행동이 끝나면 차례를 변경시켜주기 위해 turn을 1 증가시키고, 몇 명의 플레이어가 행동을 완료했는지 세는 변수인 cnt을 1 증가시키고, can_Heart 변수를 false로 초기화시킨다.
+![image](https://user-images.githubusercontent.com/112921582/221406900-795e5e36-3bc0-49c6-beaa-fd0e31cd0743.png)
 
 
 만약 턴을 완료한 사용자의 명수를 세는 변수인 cnt1과 사용자 수가 일치한다면 한 트릭이 끝났다는 뜻이다.
@@ -111,10 +117,12 @@ if(player.get(i).order==turn%p_num)과 turn++을 사용하여 플레이어가 �
 만약 top이 cnt2가 아니라면 cnt2를 또다시 증가시켜 top과 비교한다.
 이를 통하여 몇 번째로 카드를 낸 플레이어가 카드를 가져갈지 알 수 있다.
 어느 플레이어가 카드를 가져갈지가 정해졌다면, 그 플레이어의 first를 true로 바꾸고 break examin;을 한 후, 모든 플레이어의 dead_card를 출력한다.
+![image](https://user-images.githubusercontent.com/112921582/221406910-6b4112d7-5629-4e2e-976b-4942959be722.png)
 
 
 공개된 카드들을 한 플레이어가 가져가는 과정이 끝난 후, Player 클래스의 win_4Q() 메소드를 이용하여 4개의 Q를 모은 플레이어가 있는지 검사한다.
 만약 있다면, 모은 플레이어가 게임을 승리하였다고 출력한 후 break round;로 프로그램을 종료한다.
+![image](https://user-images.githubusercontent.com/112921582/221406914-f320b4c1-f5f9-496f-b59f-0072caec6b6d.png)
 
 
 한 트릭이 끝나면 플레이어의 손에 있는 카드의 개수가 0이 되었는지 확인한다.
@@ -127,10 +135,12 @@ if(player.get(i).order==turn%p_num)과 turn++을 사용하여 플레이어가 �
 
 ● 프로그램 테스트 결과
 1. 인원수를 입력할 때, 4~6 외의 입력을 했을 경우
+![image](https://user-images.githubusercontent.com/112921582/221406920-137b8b94-e905-440c-abec-c38a8ca17612.png)
 
 4~6 외의 숫자나 문자가 들어와도 프로그램이 멈추지 않고 정상적으로 동작하여 플레이어의 이름과 플레이어의 순서를 정한다.
 
 2. 플레이어가 낼 카드를 입력할 때, 범위를 벗어난 입력이 들어왔거나 이전 트릭에서 하트가 나오지 않은 경우
+![image](https://user-images.githubusercontent.com/112921582/221406925-cba17873-3690-4fe3-9170-0e114eed63e3.png)
 
 Clover 2를 가지고 있는 a가 가장 먼저 카드를 내게 된다.
 사용자로부터 낼 카드의 번호를 입력받을 때, 범위 밖의 숫자를 입력하거나 문자를 입력되면 사용자로부터 다시 입력을 받는다.
@@ -138,23 +148,27 @@ Clover 2를 가지고 있는 a가 가장 먼저 카드를 내게 된다.
 a로부터 낼 카드를 입력받으면, 입력된 카드가 a의 hand에서 사라지고 opencard에 표시된다.
 
 3. 한 트릭이 끝나면 첫 사람이 낸 카드와 문양이 같고, 가장 우열이 높은 사람이 모든 카드를 가져간다.
+![image](https://user-images.githubusercontent.com/112921582/221406930-a9edbba4-f6de-4cce-95a0-0e3339fa0f2e.png)
 
 처음에 정해졌던 순서인 cbda에서 d가 가장 먼저 시작했으므로 dacb의 순서대로 트릭이 진행된다.
 첫 플레이어가 낸 카드가 Clover 6이고, c가 낸 카드가 Clover A이므로, c가 모든 공개된 카드들을 가져간다.
 다음 트릭에서 카드를 가져간 c가 첫 번째로 시작하고, 전 트릭에서 Heart가 나왔으므로 Heart를 낼 수 있다.
 
 4. 모든 플레이어가 카드를 다 내어 라운드가 끝났을 경우
+![image](https://user-images.githubusercontent.com/112921582/221406934-4d6d5b62-987a-4925-b941-3f35823e5a08.png)
 
 한 라운드가 끝나면 플레이어가 가져간 카드들의 점수를 계산하여 출력한다.
 30점이 넘은 플레이어가 없으므로, 다음 라운드를 시작하고 모든 플레이어에게 카드를 재분배한다.
 Clover 2를 가지고 있는 d가 2라운드 1번째 트릭의 첫 번째 플레이어이다.
 
 5. 30점을 넘겨 게임이 종료된 경우
+![image](https://user-images.githubusercontent.com/112921582/221406940-93acbf14-3655-4f10-8c2b-afed35330435.png)
 
 5라운드 13번째 트릭이 끝난 후, b의 스코어가 30을 넘어 게임이 종료되었다.
 a가 23점으로 점수가 가장 낮으므로 a가 승리했음을 출력하고 프로그램이 종료된다.
 
 6. 한 사람이 Q 4장을 모아 승리한 경우
+![image](https://user-images.githubusercontent.com/112921582/221406944-5a5119b6-5c92-4afc-9f31-221c9b378997.png)
 
 1라운드 3번째 트릭에 b가 4장의 Q를 모아 b의 승리를 출력했고, 프로그램이 즉시 종료되었다.
   
