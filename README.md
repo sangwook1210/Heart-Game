@@ -25,5 +25,5 @@ turn: while(true)에서는 각 플레이어가 카드를 내고 우열을 비교
 트릭이 끝났을 때 한 플레이어가 Q 4장을 모았다면 break round;한다.
 라운드가 끝났을 때, 한 플레이어의 가져간 카드의 점수의 총합이 30점을 넘긴다면 가장 점수가 낮은 플레이어가 우승하고 break round;한다. 
 
-● 프로그램 설명
+● 프로그램 설명<br>
 ![image](https://user-images.githubusercontent.com/112921582/221403702-cee2bfd2-bdb4-4b07-b5b8-86bed851d9e2.png)
